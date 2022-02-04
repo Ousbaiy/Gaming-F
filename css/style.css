@@ -1160,66 +1160,99 @@ ul {
 }
 /* End Pricing */
 /* Start Video */
+
 .videos {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
 }
-.videos .holder {
+.videos .container {
   display: flex;
-  justify-content: center;
-  background-color: var(--section-background);
-  border: 1px solid #ddd;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
 }
-@media (max-width: 991px) {
-  .videos .holder {
-    flex-direction: column;
+.videos .main-video-container {
+  flex: 1 1 700px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  background-color: white;
+  padding: 15px;
+}
+.videos .main-video-container .main-video {
+  margin-bottom: 7px;
+  border-radius: 5px;
+  width: 100%;
+}
+.videos .main-video-container .main-vid-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+@media (max-width: 768px) {
+  .videos .main-video-container .main-vid-title {
+    font-size: 15px;
+    text-align: center;
   }
 }
-.videos .holder .list {
-  min-width: 300px;
-  background-color: white;
+.videos .video-list-container {
+  flex: 1 1 350px;
+  height: 499px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  background-color: #fff;
+  padding: 15px;
 }
-.videos .holder .list .name {
+.videos .video-list-container::-webkit-scrollbar {
+  width: 10px;
+}
+.videos .video-list-container::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.videos .video-list-container::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 5px;
+}
+.videos .video-list-container .list {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f4f4f4;
-  font-weight: bold;
-  color: var(--main-color);
-}
-.videos .holder .list .name i {
-  cursor: pointer;
-}
-.videos .holder .list ul li {
-  padding: 20px;
-  border-top: 1px solid var(--section-background);
-  cursor: pointer;
-  transition: var(--main-transition);
-}
-.videos .holder .list ul li:hover {
-  background-color: #fafafa;
-  color: var(--main-color);
-}
-.videos .holder .list ul li span {
-  display: block;
-  margin-top: 10px;
-  color: var(--p-color);
-}
-.videos .holder .preview {
-  background-color: #e2e2e2;
+  align-items: center;
+  gap: 15px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: #eeeeee61;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: .2s;
 }
-.videos .holder .preview img {
-  max-width: 100%;
+.videos .video-list-container .list:hover {
+  background-color: #eee;
 }
-.videos .holder .preview .info {
-  padding: 20px;
-  background-color: white;
-  margin-top: 10px;
+.videos .video-list-container .list.active {
+  background-color: var(--main-color);
 }
+.videos .video-list-container .list.active:hover .list-title {
+  color: #fff;
+}
+.videos .video-list-container .list.active .list-title {
+  color: #fff;
+}
+.videos .video-list-container .list:last-child {
+  margin-bottom: 0;
+}
+.videos .video-list-container .list .list-video {
+  width: 120px;
+  border-radius: 5px;
+}
+.videos .video-list-container .list .list-title {
+  font-size: 17px;
+  color: #444;
+}
+.videos .video-list-container .list:hover .list-title {
+  color: var(--main-color);
+}
+
+
 /* End Video */
 /* Start Stats */
 .stats {
