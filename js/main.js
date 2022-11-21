@@ -1,5 +1,5 @@
 // Create Countdown Timer
-let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
+let countDownDate = new Date("jun 31, 2023 23:59:59").getTime();
 let counter = setInterval(() => {
   let dateNow = new Date().getTime();
   let dateDiff = countDownDate - dateNow;
